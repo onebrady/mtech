@@ -800,26 +800,27 @@ export default function KnowledgeCenter({
                       {section.id === "maintenance" && section.content?.preSeason && (
                         <div className="space-y-6">
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* Pre-Season Checklist */}
                             <div>
                               <h4 className="font-semibold text-snow-800 mb-3">
                                 Pre-Season Checklist:
                               </h4>
                               <ul className="space-y-2">
-                                {section.content.preSeason.map(
-                                  (item, index) => (
-                                    <li
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span className="text-snow-700">
-                                        {item}
-                                      </span>
-                                    </li>
-                                  )
-                                )}
+                                {section.content.preSeason.map((item, index) => (
+                                  <li
+                                    key={index}
+                                    className="flex items-start space-x-2"
+                                  >
+                                    <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-snow-700">
+                                      {item}
+                                    </span>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
+                            
+                            {/* Daily Operations */}
                             {section.content?.daily && (
                               <div>
                                 <h4 className="font-semibold text-snow-800 mb-3">
@@ -837,8 +838,11 @@ export default function KnowledgeCenter({
                                       </span>
                                     </li>
                                   ))}
-                              </ul>
-                            </div>
+                                </ul>
+                              </div>
+                            )}
+                            
+                            {/* Weekly Maintenance */}
                             {section.content?.weekly && (
                               <div>
                                 <h4 className="font-semibold text-snow-800 mb-3">
@@ -856,8 +860,9 @@ export default function KnowledgeCenter({
                                       </span>
                                     </li>
                                   ))}
-                              </ul>
-                            </div>
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         </div>
                       )}
