@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronRight,
@@ -296,13 +296,15 @@ export default function SnowplowQuiz({ onComplete }: SnowplowQuizProps) {
                       >
                         {option.label}
                       </h3>
-                      <p
-                        className={`text-xs sm:text-sm ${
-                          isSelected ? "text-mtech-blue" : "text-mtech-gray"
-                        }`}
-                      >
-                        {option.description}
-                      </p>
+                      {'description' in option && (
+                        <p
+                          className={`text-xs sm:text-sm ${
+                            isSelected ? "text-mtech-blue" : "text-mtech-gray"
+                          }`}
+                        >
+                          {option.description}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

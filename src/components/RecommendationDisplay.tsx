@@ -4,7 +4,6 @@ import {
   ArrowLeft,
   Phone,
   Mail,
-  Calendar,
   Star,
   CheckCircle,
   Truck,
@@ -23,7 +22,7 @@ interface RecommendationDisplayProps {
 const getRecommendation = (answers: QuizAnswers): Recommendation => {
   // This is a simplified recommendation engine
   // In a real application, this would be more sophisticated
-  const { useCase, vehicleType, snowConditions, budget, features } = answers;
+  const { useCase, vehicleType, snowConditions } = answers;
 
   if (
     useCase === "commercial" &&

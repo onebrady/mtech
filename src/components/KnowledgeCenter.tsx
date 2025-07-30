@@ -8,7 +8,6 @@ import {
   Shield,
   Wrench,
   DollarSign,
-  Snowflake,
   Settings,
   ChevronDown,
   ChevronUp,
@@ -525,7 +524,7 @@ export default function KnowledgeCenter({
                     className="border-t border-snow-200"
                   >
                     <div className="p-6">
-                      {section.id === "types" && (
+                      {section.id === "types" && section.content?.sections && (
                         <div className="space-y-8">
                           {section.content.sections.map((type, index) => (
                             <div
@@ -613,7 +612,7 @@ export default function KnowledgeCenter({
                         </div>
                       )}
 
-                      {section.id === "materials" && (
+                      {section.id === "materials" && section.content?.comparison && (
                         <div className="space-y-6">
                           <div className="overflow-x-auto">
                             <table className="w-full border-collapse">
@@ -673,10 +672,10 @@ export default function KnowledgeCenter({
                         </div>
                       )}
 
-                      {section.id === "costs" && (
+                      {section.id === "costs" && section.content?.investment && (
                         <div className="space-y-6">
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {Object.entries(section.content.investment).map(
+                            {Object.entries(section.content.investment as Record<string, string>).map(
                               ([type, cost]) => (
                                 <div
                                   key={type}
@@ -717,7 +716,7 @@ export default function KnowledgeCenter({
                                 </tr>
                               </thead>
                               <tbody>
-                                {section.content.operatingCosts.map(
+                                {section.content?.operatingCosts?.map(
                                   (cost, index) => (
                                     <tr
                                       key={index}
@@ -750,7 +749,7 @@ export default function KnowledgeCenter({
                         </div>
                       )}
 
-                      {section.id === "safety" && (
+                      {section.id === "safety" && section.content?.features?.operator && (
                         <div className="space-y-6">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
@@ -773,12 +772,13 @@ export default function KnowledgeCenter({
                                 )}
                               </ul>
                             </div>
-                            <div>
-                              <h4 className="font-semibold text-snow-800 mb-3">
-                                Public Safety Features:
-                              </h4>
-                              <ul className="space-y-2">
-                                {section.content.features.public.map(
+                            {section.content?.features?.public && (
+                              <div>
+                                <h4 className="font-semibold text-snow-800 mb-3">
+                                  Public Safety Features:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {section.content.features.public.map(
                                   (feature, index) => (
                                     <li
                                       key={index}
@@ -797,7 +797,7 @@ export default function KnowledgeCenter({
                         </div>
                       )}
 
-                      {section.id === "maintenance" && (
+                      {section.id === "maintenance" && section.content?.preSeason && (
                         <div className="space-y-6">
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div>
@@ -820,12 +820,13 @@ export default function KnowledgeCenter({
                                 )}
                               </ul>
                             </div>
-                            <div>
-                              <h4 className="font-semibold text-snow-800 mb-3">
-                                Daily Operations:
-                              </h4>
-                              <ul className="space-y-2">
-                                {section.content.daily.map((item, index) => (
+                            {section.content?.daily && (
+                              <div>
+                                <h4 className="font-semibold text-snow-800 mb-3">
+                                  Daily Operations:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {section.content.daily.map((item, index) => (
                                   <li
                                     key={index}
                                     className="flex items-start space-x-2"
@@ -838,12 +839,13 @@ export default function KnowledgeCenter({
                                 ))}
                               </ul>
                             </div>
-                            <div>
-                              <h4 className="font-semibold text-snow-800 mb-3">
-                                Weekly Maintenance:
-                              </h4>
-                              <ul className="space-y-2">
-                                {section.content.weekly.map((item, index) => (
+                            {section.content?.weekly && (
+                              <div>
+                                <h4 className="font-semibold text-snow-800 mb-3">
+                                  Weekly Maintenance:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {section.content.weekly.map((item, index) => (
                                   <li
                                     key={index}
                                     className="flex items-start space-x-2"

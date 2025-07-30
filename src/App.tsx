@@ -32,7 +32,6 @@ export interface Recommendation {
 
 function App() {
   const [quizAnswers, setQuizAnswers] = useState<QuizAnswers | null>(null);
-  const [showRecommendation, setShowRecommendation] = useState(false);
   const [currentSection, setCurrentSection] = useState<
     "home" | "quiz" | "recommendation" | "knowledge"
   >("home");
@@ -86,13 +85,11 @@ function App() {
 
   const handleQuizComplete = (answers: QuizAnswers) => {
     setQuizAnswers(answers);
-    setShowRecommendation(true);
     setCurrentSection("recommendation");
   };
 
   const handleBackToQuiz = () => {
     setCurrentSection("quiz");
-    setShowRecommendation(false);
   };
 
   const handleStartQuiz = () => {

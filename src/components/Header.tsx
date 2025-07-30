@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function Header() {
   return (
