@@ -18,45 +18,45 @@ interface RecommendationDisplayProps {
   onViewKnowledge: () => void;
 }
 
-// Recommendation logic based on quiz answers - Aligned with content.md
+// Recommendation logic based on quiz answers
 const getRecommendation = (answers: QuizAnswers): Recommendation => {
-  const { useCase, vehicleType, snowConditions, budget } = answers;
+  const { useCase, vehicleType, snowConditions } = answers;
 
-  // Commercial + One-Ton + Heavy Snow (matches content.md example exactly)
+  // Commercial + Heavy Duty + Heavy Snow
   if (
     useCase === "commercial" &&
     vehicleType === "one-ton" &&
     snowConditions === "heavy"
   ) {
     return {
-      name: "ARM TruckCorp Heavy-Duty V-Plow System",
+      name: "BOSS V-DXT Series V-Plow",
       description:
-        "Perfect match for your Commercial Service + One-Ton + Heavy Snow + Professional Grade selections",
-      price: "$12,000-$15,000",
+        "Professional V-plow system perfect for heavy commercial operations",
+      price: "$13,000-$16,000",
       features: [
         "9ft Polyethylene V-Plow",
-        "Olympus Touch Screen System",
-        "Professional Quick-Attach System",
+        "Touch Screen Control System",
+        "Professional Quick-Attach",
         "Advanced Hydraulic Controls",
       ],
       whyPerfect: [
-        "V-Plow Design cuts through heavy, wet snow like an arrow",
-        "Polyethylene Blade slides snow easier, reduces fuel costs",
-        "Professional Controls make operation simple and efficient",
-        "Commercial Grade built for daily professional use",
+        "V-Plow Design cuts through heavy, wet snow efficiently",
+        "Polyethylene Blade reduces drag and fuel costs",
+        "Professional Controls for daily commercial use",
+        "Built for heavy-duty operations",
       ],
       alternatives: [
         {
-          name: "BOSS V-DXT Series",
-          price: "$13,000-$16,000",
-          why: "Proven reliability, extensive dealer network",
-          bestFor: "Contractors prioritizing brand support",
-        },
-        {
-          name: "Western MVP Plus",
+          name: "Western MVP Plus V-Plow",
           price: "$11,000-$14,000",
           why: "Advanced trip-edge protection",
           bestFor: "Areas with hidden obstacles",
+        },
+        {
+          name: "Fisher HD2 V-Plow",
+          price: "$12,000-$15,000",
+          why: "Proven durability and performance",
+          bestFor: "Professional contractors",
         },
       ],
     };
@@ -69,9 +69,9 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     snowConditions === "all-conditions"
   ) {
     return {
-      name: "ARM TruckCorp Municipal System",
+      name: "Western MVP Plus Municipal System",
       description: "Heavy-duty municipal plow for all weather conditions",
-      price: "$20,000-$35,000+",
+      price: "$18,000-$25,000",
       features: [
         "10ft Polyethylene V-Plow",
         "Municipal Control System",
@@ -108,7 +108,7 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     snowConditions === "light"
   ) {
     return {
-      name: "ARM TruckCorp Residential Series",
+      name: "BOSS Straight Blade Residential",
       description: "Perfect residential plow for personal use",
       price: "$3,500-$6,500",
       features: [
@@ -147,9 +147,9 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     snowConditions === "moderate"
   ) {
     return {
-      name: "ARM TruckCorp Commercial Series",
+      name: "BOSS Straight Blade Commercial",
       description: "Professional plow for small business operations",
-      price: "$6,000-$12,000",
+      price: "$7,000-$12,000",
       features: [
         "8ft Polyethylene Blade",
         "Commercial Control System",
@@ -179,55 +179,15 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     };
   }
 
-  // Heavy Commercial + All Conditions + High Budget
-  if (
-    useCase === "commercial" &&
-    vehicleType === "heavy-commercial" &&
-    snowConditions === "all-conditions" &&
-    budget === "20k-plus"
-  ) {
-    return {
-      name: "ARM TruckCorp Professional System",
-      description: "Heavy-duty commercial system for all conditions",
-      price: "$12,000-$20,000",
-      features: [
-        "9ft Polyethylene V-Plow",
-        "Advanced Control System",
-        "Heavy-Duty Mounting",
-        "Professional Grade Construction",
-      ],
-      whyPerfect: [
-        "Handles all snow conditions effectively",
-        "Professional-grade durability",
-        "Advanced features for commercial use",
-        "Built for daily professional operations",
-      ],
-      alternatives: [
-        {
-          name: "BOSS V-DXT Series",
-          price: "$13,000-$16,000",
-          why: "Proven reliability and support",
-          bestFor: "Professional contractors",
-        },
-        {
-          name: "Western MVP Plus",
-          price: "$11,000-$14,000",
-          why: "Advanced trip-edge protection",
-          bestFor: "Areas with hidden obstacles",
-        },
-      ],
-    };
-  }
-
   // Default recommendation for other combinations
   return {
-    name: "ARM TruckCorp Professional Series",
-    description: "Optimized solution for your specific requirements",
+    name: "BOSS Straight Blade Professional",
+    description: "Versatile plow system for your specific requirements",
     price: "$8,000-$12,000",
     features: [
       "8ft Polyethylene Blade",
-      "Standard Hydraulic Controls",
-      "Quick-Attach Mounting System",
+      "Professional Control System",
+      "Quick-Attach Mounting",
       "Corrosion-Resistant Construction",
     ],
     whyPerfect: [
@@ -238,16 +198,16 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     ],
     alternatives: [
       {
-        name: "BOSS Straight Blade System",
-        price: "$7,000-$10,000",
-        why: "Proven reliability and support",
-        bestFor: "Standard applications",
-      },
-      {
         name: "Fisher HD2 Series",
         price: "$9,000-$13,000",
         why: "Advanced features and durability",
         bestFor: "Professional operations",
+      },
+      {
+        name: "Western Professional Series",
+        price: "$7,500-$11,500",
+        why: "Proven reliability and support",
+        bestFor: "Standard applications",
       },
     ],
   };
