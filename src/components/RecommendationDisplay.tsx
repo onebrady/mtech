@@ -20,44 +20,160 @@ interface RecommendationDisplayProps {
 
 // Recommendation logic based on quiz answers
 const getRecommendation = (answers: QuizAnswers): Recommendation => {
-  // This is a simplified recommendation engine
-  // In a real application, this would be more sophisticated
   const { useCase, vehicleType, snowConditions } = answers;
 
+  // Commercial + Heavy Duty + Heavy Snow
   if (
     useCase === "commercial" &&
     vehicleType === "one-ton" &&
     snowConditions === "heavy"
   ) {
     return {
-      name: "ARM TruckCorp Heavy-Duty V-Plow System",
+      name: "BOSS V-DXT Series V-Plow",
       description:
-        "Perfect match for your Commercial Service + One-Ton + Heavy Snow + Professional Grade selections",
-      price: "$12,000-$15,000",
+        "Professional V-plow system perfect for heavy commercial operations",
+      price: "$13,000-$16,000",
       features: [
         "9ft Polyethylene V-Plow",
-        "Olympus Touch Screen System",
-        "Professional Quick-Attach System",
+        "Touch Screen Control System",
+        "Professional Quick-Attach",
         "Advanced Hydraulic Controls",
       ],
       whyPerfect: [
-        "V-Plow Design cuts through heavy, wet snow like an arrow",
-        "Polyethylene Blade slides snow easier, reduces fuel costs",
-        "Professional Controls make operation simple and efficient",
-        "Commercial Grade built for daily professional use",
+        "V-Plow Design cuts through heavy, wet snow efficiently",
+        "Polyethylene Blade reduces drag and fuel costs",
+        "Professional Controls for daily commercial use",
+        "Built for heavy-duty operations",
       ],
       alternatives: [
         {
-          name: "BOSS V-DXT Series",
-          price: "$13,000-$16,000",
-          why: "Proven reliability, extensive dealer network",
-          bestFor: "Contractors prioritizing brand support",
-        },
-        {
-          name: "Western MVP Plus",
+          name: "Western MVP Plus V-Plow",
           price: "$11,000-$14,000",
           why: "Advanced trip-edge protection",
           bestFor: "Areas with hidden obstacles",
+        },
+        {
+          name: "Fisher HD2 V-Plow",
+          price: "$12,000-$15,000",
+          why: "Proven durability and performance",
+          bestFor: "Professional contractors",
+        },
+      ],
+    };
+  }
+
+  // Municipal + Heavy Commercial + All Conditions
+  if (
+    useCase === "municipal" &&
+    vehicleType === "heavy-commercial" &&
+    snowConditions === "all-conditions"
+  ) {
+    return {
+      name: "Western MVP Plus Municipal System",
+      description: "Heavy-duty municipal plow for all weather conditions",
+      price: "$18,000-$25,000",
+      features: [
+        "10ft Polyethylene V-Plow",
+        "Municipal Control System",
+        "Heavy-Duty Mounting",
+        "Advanced Safety Features",
+      ],
+      whyPerfect: [
+        "Municipal-grade construction for daily use",
+        "Advanced safety features for public roads",
+        "Handles all snow and ice conditions",
+        "Built for continuous operation",
+      ],
+      alternatives: [
+        {
+          name: "BOSS Municipal V-DXT",
+          price: "$20,000-$28,000",
+          why: "Extensive municipal experience",
+          bestFor: "Large municipal fleets",
+        },
+        {
+          name: "Fisher Municipal Series",
+          price: "$16,000-$22,000",
+          why: "Cost-effective municipal solution",
+          bestFor: "Budget-conscious municipalities",
+        },
+      ],
+    };
+  }
+
+  // Personal + Half-Ton + Light Snow
+  if (
+    useCase === "personal" &&
+    vehicleType === "half-ton" &&
+    snowConditions === "light"
+  ) {
+    return {
+      name: "BOSS Straight Blade Residential",
+      description: "Perfect residential plow for personal use",
+      price: "$3,500-$6,500",
+      features: [
+        "7.5ft Steel Blade",
+        "Standard Hydraulic Controls",
+        "Easy Mounting System",
+        "Residential Durability",
+      ],
+      whyPerfect: [
+        "Perfect size for half-ton trucks",
+        "Affordable for personal use",
+        "Easy to install and operate",
+        "Reliable for occasional use",
+      ],
+      alternatives: [
+        {
+          name: "Fisher Residential Series",
+          price: "$4,000-$7,000",
+          why: "Enhanced residential features",
+          bestFor: "Premium residential use",
+        },
+        {
+          name: "Western Residential Blade",
+          price: "$3,000-$5,500",
+          why: "Budget-friendly option",
+          bestFor: "Basic residential needs",
+        },
+      ],
+    };
+  }
+
+  // Small Business + Three-Quarter Ton + Moderate Snow
+  if (
+    useCase === "small-business" &&
+    vehicleType === "three-quarter" &&
+    snowConditions === "moderate"
+  ) {
+    return {
+      name: "BOSS Straight Blade Commercial",
+      description: "Professional plow for small business operations",
+      price: "$7,000-$12,000",
+      features: [
+        "8ft Polyethylene Blade",
+        "Commercial Control System",
+        "Quick-Attach Mounting",
+        "Corrosion-Resistant Construction",
+      ],
+      whyPerfect: [
+        "Perfect balance of performance and cost",
+        "Commercial-grade durability",
+        "Handles moderate snow conditions",
+        "Ideal for small business operations",
+      ],
+      alternatives: [
+        {
+          name: "Fisher HD2 Straight Blade",
+          price: "$8,000-$13,000",
+          why: "Advanced commercial features",
+          bestFor: "Growing businesses",
+        },
+        {
+          name: "Western Commercial Series",
+          price: "$6,500-$11,000",
+          why: "Proven commercial reliability",
+          bestFor: "Established contractors",
         },
       ],
     };
@@ -65,13 +181,13 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
 
   // Default recommendation for other combinations
   return {
-    name: "ARM TruckCorp Professional Series",
-    description: "Optimized solution for your specific requirements",
+    name: "BOSS Straight Blade Professional",
+    description: "Versatile plow system for your specific requirements",
     price: "$8,000-$12,000",
     features: [
       "8ft Polyethylene Blade",
-      "Standard Hydraulic Controls",
-      "Quick-Attach Mounting System",
+      "Professional Control System",
+      "Quick-Attach Mounting",
       "Corrosion-Resistant Construction",
     ],
     whyPerfect: [
@@ -82,16 +198,16 @@ const getRecommendation = (answers: QuizAnswers): Recommendation => {
     ],
     alternatives: [
       {
-        name: "BOSS Straight Blade System",
-        price: "$7,000-$10,000",
-        why: "Proven reliability and support",
-        bestFor: "Standard applications",
-      },
-      {
         name: "Fisher HD2 Series",
         price: "$9,000-$13,000",
         why: "Advanced features and durability",
         bestFor: "Professional operations",
+      },
+      {
+        name: "Western Professional Series",
+        price: "$7,500-$11,500",
+        why: "Proven reliability and support",
+        bestFor: "Standard applications",
       },
     ],
   };
@@ -163,9 +279,7 @@ export default function RecommendationDisplay({
         <motion.div className="lg:col-span-2" variants={itemVariants}>
           <div className="bg-white rounded-2xl shadow-xl border border-snow-200 overflow-hidden">
             <div className="bg-gradient-to-r from-primary-500 to-ice-500 p-6 text-white">
-              <h2 className="text-2xl font-bold mb-2">
-                Recommended Configuration
-              </h2>
+              <h2 className="text-2xl font-bold mb-2">{recommendation.name}</h2>
               <p className="text-primary-100">
                 Perfect for your specific needs
               </p>
