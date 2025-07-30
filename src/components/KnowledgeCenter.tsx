@@ -612,71 +612,77 @@ export default function KnowledgeCenter({
                         </div>
                       )}
 
-                      {section.id === "materials" && section.content?.comparison && (
-                        <div className="space-y-6">
-                          <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
-                              <thead>
-                                <tr className="bg-snow-50">
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Material
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Initial Cost
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Durability
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Snow Release
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Corrosion Resistance
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Best For
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {section.content.comparison.map(
-                                  (material, index) => (
-                                    <tr
-                                      key={index}
-                                      className="hover:bg-snow-50"
-                                    >
-                                      <td className="p-3 border border-snow-200 font-semibold">
-                                        {material.material}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {material.initialCost}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {material.durability}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {material.snowRelease}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {material.corrosionResistance}
-                                      </td>
-                                      <td className="p-3 border border-snow-200 text-sm">
-                                        {material.bestFor}
-                                      </td>
-                                    </tr>
-                                  )
-                                )}
-                              </tbody>
-                            </table>
+                      {section.id === "materials" &&
+                        section.content?.comparison && (
+                          <div className="space-y-6">
+                            <div className="overflow-x-auto">
+                              <table className="w-full border-collapse">
+                                <thead>
+                                  <tr className="bg-snow-50">
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Material
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Initial Cost
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Durability
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Snow Release
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Corrosion Resistance
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Best For
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {section.content.comparison.map(
+                                    (material, index) => (
+                                      <tr
+                                        key={index}
+                                        className="hover:bg-snow-50"
+                                      >
+                                        <td className="p-3 border border-snow-200 font-semibold">
+                                          {material.material}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {material.initialCost}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {material.durability}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {material.snowRelease}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {material.corrosionResistance}
+                                        </td>
+                                        <td className="p-3 border border-snow-200 text-sm">
+                                          {material.bestFor}
+                                        </td>
+                                      </tr>
+                                    )
+                                  )}
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
 
-                      {section.id === "costs" && section.content?.investment && (
-                        <div className="space-y-6">
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {Object.entries(section.content.investment as Record<string, string>).map(
-                              ([type, cost]) => (
+                      {section.id === "costs" &&
+                        section.content?.investment && (
+                          <div className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                              {Object.entries(
+                                section.content.investment as Record<
+                                  string,
+                                  string
+                                >
+                              ).map(([type, cost]) => (
                                 <div
                                   key={type}
                                   className="bg-snow-50 p-4 rounded-lg"
@@ -688,181 +694,358 @@ export default function KnowledgeCenter({
                                     {cost}
                                   </p>
                                 </div>
-                              )
-                            )}
+                              ))}
+                            </div>
+                            <div className="overflow-x-auto">
+                              <table className="w-full border-collapse">
+                                <thead>
+                                  <tr className="bg-snow-50">
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Operation Type
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Equipment
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Maintenance
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Fuel
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Insurance
+                                    </th>
+                                    <th className="p-3 text-left border border-snow-200">
+                                      Total Annual
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {section.content?.operatingCosts?.map(
+                                    (cost, index) => (
+                                      <tr
+                                        key={index}
+                                        className="hover:bg-snow-50"
+                                      >
+                                        <td className="p-3 border border-snow-200 font-semibold">
+                                          {cost.type}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {cost.equipment}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {cost.maintenance}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {cost.fuel}
+                                        </td>
+                                        <td className="p-3 border border-snow-200">
+                                          {cost.insurance}
+                                        </td>
+                                        <td className="p-3 border border-snow-200 font-bold text-primary-600">
+                                          {cost.total}
+                                        </td>
+                                      </tr>
+                                    )
+                                  )}
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
-                          <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
-                              <thead>
-                                <tr className="bg-snow-50">
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Operation Type
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Equipment
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Maintenance
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Fuel
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Insurance
-                                  </th>
-                                  <th className="p-3 text-left border border-snow-200">
-                                    Total Annual
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {section.content?.operatingCosts?.map(
-                                  (cost, index) => (
-                                    <tr
-                                      key={index}
-                                      className="hover:bg-snow-50"
-                                    >
-                                      <td className="p-3 border border-snow-200 font-semibold">
-                                        {cost.type}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {cost.equipment}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {cost.maintenance}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {cost.fuel}
-                                      </td>
-                                      <td className="p-3 border border-snow-200">
-                                        {cost.insurance}
-                                      </td>
-                                      <td className="p-3 border border-snow-200 font-bold text-primary-600">
-                                        {cost.total}
-                                      </td>
-                                    </tr>
-                                  )
-                                )}
-                              </tbody>
-                            </table>
+                        )}
+
+                      {section.id === "safety" &&
+                        section.content?.features?.operator && (
+                          <div className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              <div>
+                                <h4 className="font-semibold text-snow-800 mb-3">
+                                  Operator Protection Systems:
+                                </h4>
+                                <ul className="space-y-2">
+                                  {section.content.features.operator.map(
+                                    (feature, index) => (
+                                      <li
+                                        key={index}
+                                        className="flex items-start space-x-2"
+                                      >
+                                        <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-snow-700">
+                                          {feature}
+                                        </span>
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              </div>
+                              {section.content?.features?.public && (
+                                <div>
+                                  <h4 className="font-semibold text-snow-800 mb-3">
+                                    Public Safety Features:
+                                  </h4>
+                                  <ul className="space-y-2">
+                                    {section.content.features.public.map(
+                                      (feature, index) => (
+                                        <li
+                                          key={index}
+                                          className="flex items-start space-x-2"
+                                        >
+                                          <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
+                                          <span className="text-snow-700">
+                                            {feature}
+                                          </span>
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                      {section.id === "sizing" && section.content?.vehicles && (
+                        <div className="space-y-6">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {section.content.vehicles.map((vehicle, index) => (
+                              <div
+                                key={index}
+                                className="bg-snow-50 p-6 rounded-lg"
+                              >
+                                <h4 className="font-semibold text-snow-800 mb-2">
+                                  {vehicle.type}
+                                </h4>
+                                <p className="text-primary-600 font-medium mb-4">
+                                  {vehicle.category}
+                                </p>
+
+                                <div className="space-y-4">
+                                  <div>
+                                    <h5 className="font-semibold text-snow-800 mb-2">
+                                      Specifications:
+                                    </h5>
+                                    <ul className="space-y-1 text-sm">
+                                      {vehicle.specs.bladeWidth && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Blade Width:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.bladeWidth}
+                                          </span>
+                                        </li>
+                                      )}
+                                      {vehicle.specs.weightLimit && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Weight Limit:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.weightLimit}
+                                          </span>
+                                        </li>
+                                      )}
+                                      {vehicle.specs.weightCapacity && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Weight Capacity:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.weightCapacity}
+                                          </span>
+                                        </li>
+                                      )}
+                                      {vehicle.specs.configurations && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Configurations:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.configurations}
+                                          </span>
+                                        </li>
+                                      )}
+                                      {vehicle.specs.ballast && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Ballast Required:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.ballast}
+                                          </span>
+                                        </li>
+                                      )}
+                                      {vehicle.specs.features && (
+                                        <li className="flex justify-between">
+                                          <span className="text-snow-600">
+                                            Features:
+                                          </span>
+                                          <span className="font-medium">
+                                            {vehicle.specs.features}
+                                          </span>
+                                        </li>
+                                      )}
+                                    </ul>
+                                  </div>
+
+                                  <div>
+                                    <h5 className="font-semibold text-snow-800 mb-2">
+                                      Price Range:
+                                    </h5>
+                                    <p className="text-primary-600 font-bold">
+                                      {vehicle.priceRange}
+                                    </p>
+                                  </div>
+
+                                  <div>
+                                    <h5 className="font-semibold text-snow-800 mb-2">
+                                      Applications:
+                                    </h5>
+                                    <ul className="space-y-1">
+                                      {vehicle.applications.map(
+                                        (app, appIndex) => (
+                                          <li
+                                            key={appIndex}
+                                            className="flex items-start space-x-2"
+                                          >
+                                            <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                            <span className="text-snow-700 text-sm">
+                                              {app}
+                                            </span>
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  </div>
+
+                                  {vehicle.limitations && (
+                                    <div>
+                                      <h5 className="font-semibold text-snow-800 mb-2">
+                                        Limitations:
+                                      </h5>
+                                      <ul className="space-y-1">
+                                        {vehicle.limitations.map(
+                                          (limitation, limIndex) => (
+                                            <li
+                                              key={limIndex}
+                                              className="flex items-start space-x-2"
+                                            >
+                                              <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
+                                              <span className="text-snow-700 text-sm">
+                                                {limitation}
+                                              </span>
+                                            </li>
+                                          )
+                                        )}
+                                      </ul>
+                                    </div>
+                                  )}
+
+                                  {vehicle.advantages && (
+                                    <div>
+                                      <h5 className="font-semibold text-snow-800 mb-2">
+                                        Advantages:
+                                      </h5>
+                                      <ul className="space-y-1">
+                                        {vehicle.advantages.map(
+                                          (advantage, advIndex) => (
+                                            <li
+                                              key={advIndex}
+                                              className="flex items-start space-x-2"
+                                            >
+                                              <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                              <span className="text-snow-700 text-sm">
+                                                {advantage}
+                                              </span>
+                                            </li>
+                                          )
+                                        )}
+                                      </ul>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       )}
 
-                      {section.id === "safety" && section.content?.features?.operator && (
-                        <div className="space-y-6">
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                              <h4 className="font-semibold text-snow-800 mb-3">
-                                Operator Protection Systems:
-                              </h4>
-                              <ul className="space-y-2">
-                                {section.content.features.operator.map((feature, index) => (
-                                  <li
-                                    key={index}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
-                                    <span className="text-snow-700">
-                                      {feature}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            {section.content?.features?.public && (
+                      {section.id === "maintenance" &&
+                        section.content?.preSeason && (
+                          <div className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                              {/* Pre-Season Checklist */}
                               <div>
                                 <h4 className="font-semibold text-snow-800 mb-3">
-                                  Public Safety Features:
+                                  Pre-Season Checklist:
                                 </h4>
                                 <ul className="space-y-2">
-                                  {section.content.features.public.map((feature, index) => (
-                                    <li
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span className="text-snow-700">
-                                        {feature}
-                                      </span>
-                                    </li>
-                                  ))}
+                                  {section.content.preSeason.map(
+                                    (item, index) => (
+                                      <li
+                                        key={index}
+                                        className="flex items-start space-x-2"
+                                      >
+                                        <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-snow-700">
+                                          {item}
+                                        </span>
+                                      </li>
+                                    )
+                                  )}
                                 </ul>
                               </div>
-                            )}
-                          </div>
-                        </div>
-                      )}
 
-                      {section.id === "maintenance" && section.content?.preSeason && (
-                        <div className="space-y-6">
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {/* Pre-Season Checklist */}
-                            <div>
-                              <h4 className="font-semibold text-snow-800 mb-3">
-                                Pre-Season Checklist:
-                              </h4>
-                              <ul className="space-y-2">
-                                {section.content.preSeason.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
-                                    <span className="text-snow-700">
-                                      {item}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
+                              {/* Daily Operations */}
+                              {section.content?.daily && (
+                                <div>
+                                  <h4 className="font-semibold text-snow-800 mb-3">
+                                    Daily Operations:
+                                  </h4>
+                                  <ul className="space-y-2">
+                                    {section.content.daily.map(
+                                      (item, index) => (
+                                        <li
+                                          key={index}
+                                          className="flex items-start space-x-2"
+                                        >
+                                          <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
+                                          <span className="text-snow-700">
+                                            {item}
+                                          </span>
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              )}
+
+                              {/* Weekly Maintenance */}
+                              {section.content?.weekly && (
+                                <div>
+                                  <h4 className="font-semibold text-snow-800 mb-3">
+                                    Weekly Maintenance:
+                                  </h4>
+                                  <ul className="space-y-2">
+                                    {section.content.weekly.map(
+                                      (item, index) => (
+                                        <li
+                                          key={index}
+                                          className="flex items-start space-x-2"
+                                        >
+                                          <div className="w-2 h-2 bg-snow-500 rounded-full mt-2 flex-shrink-0" />
+                                          <span className="text-snow-700">
+                                            {item}
+                                          </span>
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                </div>
+                              )}
                             </div>
-                            
-                            {/* Daily Operations */}
-                            {section.content?.daily && (
-                              <div>
-                                <h4 className="font-semibold text-snow-800 mb-3">
-                                  Daily Operations:
-                                </h4>
-                                <ul className="space-y-2">
-                                  {section.content.daily.map((item, index) => (
-                                    <li
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span className="text-snow-700">
-                                        {item}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            
-                            {/* Weekly Maintenance */}
-                            {section.content?.weekly && (
-                              <div>
-                                <h4 className="font-semibold text-snow-800 mb-3">
-                                  Weekly Maintenance:
-                                </h4>
-                                <ul className="space-y-2">
-                                  {section.content.weekly.map((item, index) => (
-                                    <li
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <div className="w-2 h-2 bg-snow-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span className="text-snow-700">
-                                        {item}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
                   </motion.div>
                 )}
