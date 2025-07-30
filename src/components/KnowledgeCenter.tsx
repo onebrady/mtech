@@ -827,16 +827,16 @@ export default function KnowledgeCenter({
                                 </h4>
                                 <ul className="space-y-2">
                                   {section.content.daily.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
-                                    <span className="text-snow-700">
-                                      {item}
-                                    </span>
-                                  </li>
-                                ))}
+                                    <li
+                                      key={index}
+                                      className="flex items-start space-x-2"
+                                    >
+                                      <div className="w-2 h-2 bg-ice-500 rounded-full mt-2 flex-shrink-0" />
+                                      <span className="text-snow-700">
+                                        {item}
+                                      </span>
+                                    </li>
+                                  ))}
                               </ul>
                             </div>
                             {section.content?.weekly && (
@@ -846,16 +846,16 @@ export default function KnowledgeCenter({
                                 </h4>
                                 <ul className="space-y-2">
                                   {section.content.weekly.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    className="flex items-start space-x-2"
-                                  >
-                                    <div className="w-2 h-2 bg-snow-500 rounded-full mt-2 flex-shrink-0" />
-                                    <span className="text-snow-700">
-                                      {item}
-                                    </span>
-                                  </li>
-                                ))}
+                                    <li
+                                      key={index}
+                                      className="flex items-start space-x-2"
+                                    >
+                                      <div className="w-2 h-2 bg-snow-500 rounded-full mt-2 flex-shrink-0" />
+                                      <span className="text-snow-700">
+                                        {item}
+                                      </span>
+                                    </li>
+                                  ))}
                               </ul>
                             </div>
                           </div>
