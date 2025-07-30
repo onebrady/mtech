@@ -152,7 +152,7 @@ const questions = [
 
 export default function SnowplowQuiz({ onComplete }: SnowplowQuizProps) {
   const [currentStep, setCurrentStep] = useState(0);
-  const { control, handleSubmit, watch, setValue } = useForm<QuizFormData>({
+  const { handleSubmit, watch, setValue } = useForm<QuizFormData>({
     defaultValues: {
       useCase: "",
       vehicleType: "",
@@ -296,7 +296,7 @@ export default function SnowplowQuiz({ onComplete }: SnowplowQuizProps) {
                       >
                         {option.label}
                       </h3>
-                      {'description' in option && (
+                      {"description" in option && (
                         <p
                           className={`text-xs sm:text-sm ${
                             isSelected ? "text-mtech-blue" : "text-mtech-gray"

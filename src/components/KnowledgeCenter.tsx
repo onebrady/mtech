@@ -757,19 +757,17 @@ export default function KnowledgeCenter({
                                 Operator Protection Systems:
                               </h4>
                               <ul className="space-y-2">
-                                {section.content.features.operator.map(
-                                  (feature, index) => (
-                                    <li
-                                      key={index}
-                                      className="flex items-start space-x-2"
-                                    >
-                                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
-                                      <span className="text-snow-700">
-                                        {feature}
-                                      </span>
-                                    </li>
-                                  )
-                                )}
+                                {section.content.features.operator.map((feature, index) => (
+                                  <li
+                                    key={index}
+                                    className="flex items-start space-x-2"
+                                  >
+                                    <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
+                                    <span className="text-snow-700">
+                                      {feature}
+                                    </span>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
                             {section.content?.features?.public && (
@@ -778,8 +776,7 @@ export default function KnowledgeCenter({
                                   Public Safety Features:
                                 </h4>
                                 <ul className="space-y-2">
-                                  {section.content.features.public.map(
-                                  (feature, index) => (
+                                  {section.content.features.public.map((feature, index) => (
                                     <li
                                       key={index}
                                       className="flex items-start space-x-2"
@@ -789,10 +786,10 @@ export default function KnowledgeCenter({
                                         {feature}
                                       </span>
                                     </li>
-                                  )
-                                )}
-                              </ul>
-                            </div>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         </div>
                       )}
